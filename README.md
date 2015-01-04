@@ -57,7 +57,7 @@ grunt.initConfig({
 
 #### Required
 
-##### **`debug`** (String)
+##### **`jsx`** (String)
 
 Path to the JSX file to execute on every source file.
 
