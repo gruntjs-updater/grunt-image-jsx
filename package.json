@@ -1,7 +1,7 @@
 {
   "name": "grunt-image-jsx",
   "description": "Run JSX scripts on image files",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/b263/grunt-image-jsx",
   "author": {
     "name": "Bastian Bräu",

@@ -8,7 +8,7 @@ deploy:
   provider: npm
   email: bb@bftmedia.de
   api_key:
-    secure: LfC4/zzQJ1s4h9gUrl1OoRiJw1zBTh7dmEBqAB50vpUd46Tc0ub5QnO0XdaP4klupRx0vDEnvJ1j2mahb/vsVZvRHGNUritHEZi/eVktSCk5TYCK51VvoGybgBEbEi1JeFe4zaqMWfz3/1GxRDjbQZJfnVqRhiXp2eaxivMvObA=
+    secure: XbguG88qFeaSOxxUiZLn6lQjI0EWcU9PFDdBw0v2Qo/XX9MlsQYsGkx/piTqmcLUre+5XChvUeumzJxfl6JSd/8MSuqATkOWWakQBjjEmElqzwLARCIY43VvFe6yS7IPyhSw2l/1EXmFJgnzPPhqfT7rTr564uH9mUdIMfwWlXU=
   on:
     tags: true
     repo: b263/grunt-image-jsx
