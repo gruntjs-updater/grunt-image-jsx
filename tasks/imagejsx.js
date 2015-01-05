@@ -13,6 +13,10 @@ var JsxRunner = require('../lib/JsxRunner'),
 
 module.exports = function (grunt) {
 
+	function progressHandler(src, dest) {
+		grunt.log.writeln('Processing file ' + src + ' -> ' + dest);
+	}
+
 	grunt.registerMultiTask('imagejsx', 'Run JSX scripts on image files', function () {
 		var jsxRunner = new JsxRunner(this.files),
 			self = this,
@@ -22,6 +26,7 @@ module.exports = function (grunt) {
 				jsxRunner.setOptions(self.options({
 					debug: 'on runtime error'
 				}));
+				jsxRunner.progressHandler = progressHandler;
 				jsxRunner.processFilesSync(done);
 			} catch (e) {
 				grunt.fail.fatal(e);
