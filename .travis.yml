@@ -4,3 +4,13 @@ node_js:
 before_install:
   - npm install grunt-cli -g
 install: npm install
+deploy:
+  provider: npm
+  email: bb@bftmedia.de
+  api_key:
+    secure: LfC4/zzQJ1s4h9gUrl1OoRiJw1zBTh7dmEBqAB50vpUd46Tc0ub5QnO0XdaP4klupRx0vDEnvJ1j2mahb/vsVZvRHGNUritHEZi/eVktSCk5TYCK51VvoGybgBEbEi1JeFe4zaqMWfz3/1GxRDjbQZJfnVqRhiXp2eaxivMvObA=
+  on:
+    tags: true
+    repo: b263/grunt-image-jsx
+    # Change when this is fixed: https://github.com/travis-ci/travis-ci/issues/1675
+    all_branches: true

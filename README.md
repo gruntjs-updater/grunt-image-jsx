@@ -1,8 +1,8 @@
-# grunt-image-jsx
-
 [![NPM](https://img.shields.io/npm/v/grunt-image-jsx.svg)](https://www.npmjs.com/package/grunt-image-jsx)
 [![GitHub](https://img.shields.io/github/tag/b263/grunt-image-jsx.svg)](https://github.com/b263/grunt-image-jsx)
-[![Travis CI](https://img.shields.io/travis/b263/grunt-image-jsx/master.svg)](https://travis-ci.org/b263/grunt-image-jsx)
+[![Travis CI](https://img.shields.io/travis/b263/grunt-image-jsx.svg)](https://travis-ci.org/b263/grunt-image-jsx)
+
+# grunt-image-jsx
 
 > Run JSX scripts on image files
 
