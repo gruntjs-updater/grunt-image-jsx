@@ -10,7 +10,12 @@
 
 module.exports = function (grunt) {
 
-	// Project configuration.
+	require('grunt-task-loader')(grunt, {
+		mapping: {
+			debug: 'grunt-debug-task'
+		}
+	});
+
 	grunt.initConfig({
 		jshint: {
 			all: [
@@ -31,13 +36,14 @@ module.exports = function (grunt) {
 		imagejsx: {
 			test: {
 				options: {
-					jsx: 'test/invert.jsx',
+					jsx: 'test/demo.jsx',
 					debug: 'on runtime error'
 				},
 				files: [
 					{
-						src: ['test/fixtures/*.png'],
-						dest: 'tmp',
+						cwd: 'test/fixtures',
+						src: ['*.png'],
+						dest: 'tmp/<%= grunt.task.current.args[0] %>',
 						expand: true,
 						flatten: false
 					}
@@ -52,13 +58,8 @@ module.exports = function (grunt) {
 
 	});
 
-	grunt.loadTasks('tasks');
-
-	require('grunt-task-loader')(grunt);
-	grunt.loadNpmTasks('grunt-debug-task'); // Task loader does not load this one?
-
 	grunt.registerTask('unit-test', ['nodeunit:unit']);
-	grunt.registerTask('test', ['clean', 'imagejsx', 'nodeunit']);
+	grunt.registerTask('test', ['clean', 'imagejsx:test:invert', 'imagejsx:test:resize:50', 'nodeunit']);
 	grunt.registerTask('default', ['jshint', 'test']);
 
 };

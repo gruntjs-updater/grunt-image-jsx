@@ -20,12 +20,14 @@ module.exports = function (grunt) {
 	grunt.registerMultiTask('imagejsx', 'Run JSX scripts on image files', function () {
 		var jsxRunner = new JsxRunner(this.files),
 			self = this,
-			done = this.async();
+			done = this.async(),
+			args = arguments;
 		isApplicationInstalled(function yes() {
 			try {
 				jsxRunner.setOptions(self.options({
 					debug: 'on runtime error'
 				}));
+				jsxRunner.setAdditionalArguments(args);
 				jsxRunner.progressHandler = progressHandler;
 				jsxRunner.processFilesSync(done);
 			} catch (e) {

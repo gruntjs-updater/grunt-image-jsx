@@ -29,9 +29,11 @@ module.exports.imagejsx = {
 	},
 	testRun: function (test) {
 		isApplicationInstalled(function yes() {
-			test.expect(2);
-			test.ok(fs.existsSync('tmp/test/fixtures/invert.png'), 'The destination file should be created');
-			test.ok(fs.existsSync('tmp/test/fixtures/invert2.png'), 'The destination file should be created');
+			test.expect(4);
+			test.ok(fs.existsSync('tmp/invert/test1.png'), 'The destination file should be created');
+			test.ok(fs.existsSync('tmp/invert/test2.png'), 'The destination file should be created');
+			test.ok(fs.existsSync('tmp/resize/test1.png'), 'The destination file should be created');
+			test.ok(fs.existsSync('tmp/resize/test2.png'), 'The destination file should be created');
 			test.done();
 		}, function no() {
 			test.done();

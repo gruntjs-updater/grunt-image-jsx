@@ -27,7 +27,7 @@ var JsxRunner = require('../lib/JsxRunner'),
 
 var validOptions = {
 	debug: 'never',
-	jsx: 'test/invert.jsx'
+	jsx: 'test/demo.jsx'
 };
 
 module.exports.jsxRunner = {
@@ -94,6 +94,14 @@ module.exports.jsxRunner = {
 		test.expect(1);
 		test.equal(this.jsxRunner.getShellCommand('jsx', 'src', 'dest', 'debug'),
 			'osascript -e \'tell application id "' + appId + '" to do javascript file "jsx" with arguments {"src","dest"} show debugger debug\''
+		);
+		test.done();
+	},
+
+	shellCommandConsidersAdditionalArguments: function (test) {
+		test.expect(1);
+		test.equal(this.jsxRunner.getShellCommand('jsx', 'src', 'dest', 'debug', [1, 2]),
+			'osascript -e \'tell application id "' + appId + '" to do javascript file "jsx" with arguments {"src","dest","1","2"} show debugger debug\''
 		);
 		test.done();
 	}
